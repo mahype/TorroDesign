@@ -1,0 +1,9 @@
+/* Torro — Brand Colors
+   Verbindlich ist der Vektorwert --torro-red (#D50C0C). */
+:root {
+  --torro-red:      #D50C0C; /* Kernfarbe, Grundflächen        */
+  --torro-red-deep: #A50A0A; /* Verläufe, Hover, Tiefe         */
+  --torro-black:    #0E0E0F; /* Kontur (Bulle), Text           */
+  --torro-silver:   #C4C3C3; /* Wortmarken-Zusatz              */
+  --torro-white:    #FFFFFF; /* Schrift auf Rot                */
+}
