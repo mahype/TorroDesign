@@ -63,7 +63,7 @@ Sekundär für Print-Fließtext: **Minion Pro Regular**
 
 ```
 logo/
-├── wordmark/       Wortmarke „TORROFORMS" (Hörner + Schriftzug)
+├── wordmark/       Wortmarken (Hörner + Schriftzug) — TORROFORMS, TORROMAIL
 ├── icon-square/    App-Icon: rotes Quadrat mit Hörnern
 ├── horns/          Hörner-Signet allein (weiß / rot / schwarz)
 └── bull/           Kampfbulle (Key-Visual)
@@ -76,9 +76,16 @@ logo/
 | Wortmarke (Web/Print) | `logo/wordmark/torro-forms-logo-outlines.ai/.eps` | **Outlines** → keine Font-Abhängigkeit |
 | Wortmarke (editierbar) | `logo/wordmark/torro-forms-logo.ai` | Text noch als Frutiger-Font |
 | Wortmarke (Web) | `logo/wordmark/torroforms-wordmark.svg` | weiß/silber, für dunklen/roten Grund |
+| Wortmarke TorroMail | `logo/wordmark/torromail-wordmark.svg` | Produktvariante, weiß/silber, Outlines |
 | App-Icon | `logo/icon-square/torro-logo-square.svg` | Favicon, App-Icon, Avatar |
 | Hörner-Signet | `logo/horns/horns-{white,red,black}.svg` | kleine Akzente, Loader, Wasserzeichen |
 | Kampfbulle | `logo/bull/torro-bull-transparent.ai` · `torro-bull.svg` | Hero/Key-Visual, großformatig |
+
+Die Produktvariante `torromail-wordmark.svg` übernimmt Hörner, Abstände und
+Versalhöhe unverändert aus `torroforms-wordmark.svg`; „MAIL" steht wie der
+Zusatz der Hauptmarke in Silber. Der Schriftzug ist in Outlines gewandelt,
+also ohne Font-Abhängigkeit. Nach demselben Muster lassen sich weitere
+Produktmarken ableiten.
 
 Die `.ai`-Dateien sind PDF-kompatibel und lassen sich mit
 `pdftocairo -svg datei.ai datei.svg` (Poppler) verlustfrei nach SVG wandeln —
