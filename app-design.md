@@ -95,7 +95,8 @@ Einstellungsseiten sind stattdessen gruppierte Formulare (macOS
 
 Die erhabene Fläche, auf der jedes Panel sitzt:
 
-- Eckenradius **12**, kontinuierlich (Hero: **14**, Code-Block: **8**).
+- Eckenradius **12**, kontinuierlich (Code-Block: **8**; der Hero ist
+  randlos, siehe unten).
 - Füllung: primärer Grund.
 - **Zwei Schatten** (Umgebungs- + Kontaktschatten), am Hintergrund der Karte,
   nie am Inhalt — sonst wirft jedes Label mit:
@@ -121,12 +122,15 @@ Innenabstand der Karte: horizontal 14, Zeilen vertikal 7–11, Trennung durch
 
 Der eine laute Markenmoment (Werte aus TorroMail):
 
-- Verlauf `#D50C0C → #A50A0A`, diagonal (oben links → unten rechts),
-  Radius 14, Randlinie `weiß 18 %`, Schatten `schwarz 28 % / r 6 / y 3`.
-- Innen: Wortmarke (Versalhöhe 15), darunter ein Satz Klartext in Weiß 92 %
-  (`callout`) — was die App tut, in einer Zeile.
-- **Signet als Wasserzeichen**: weiß 9 %, rechts **angeschnitten** — von der
-  Karte beschnitten, nie frei schwebend.
+- **Randlos** oben im Inhalt: bündig an **Fensteroberkante, rechter Kante und
+  Seitenleiste** — kein dunkler Rand, **kein Außenradius, keine Randlinie,
+  keine Margin**. Die Fensterecke beschneidet ihn oben rechts; die übrigen
+  Ecken sind gerade. Keine schwebende Karte.
+- Verlauf `#D50C0C → #A50A0A`, diagonal (oben links → unten rechts).
+- Innen: Wortmarke (Versalhöhe 15), darunter **ein Satz Klartext in einer
+  Zeile** in Weiß 92 % (`callout`) — was die App tut.
+- **Signet als Wasserzeichen**: weiß ~10 %, rechts **angeschnitten** — vom
+  Header beschnitten, nie frei schwebend.
 
 ### Wortmarke im Produkt
 
@@ -134,20 +138,36 @@ Aufbau wie die TORROFORMS-Wortmarke: Hörner beidseitig, Name im Display-Schnitt
 **„TORRO" weiß, Produktname silber `#C4C3C3`**. Proportionen aus der
 Versalhöhe abgeleitet: Hornhöhe = 2 × Versalhöhe, Hörner enden auf der
 Grundlinie, Abstand ≈ 0,14 × Versalhöhe, Schriftgröße = Versalhöhe / 0,7.
-Am Fuß der Sidebar sitzt sie **still** (Versalhöhe 11, ohne eigenen Grund) —
-das Rot gehört dem Hero.
+Am Fuß der Sidebar sitzt sie **still** (ohne eigenen Grund), **zentriert mit
+gleichem Abstand links und rechts** und etwas größer als eine Fußnote — die
+ruhige Signatur; das Rot gehört dem Hero.
 
 ---
 
 ## Layout
 
-### Fenster
+### Fenster — ein Bauplan für alle Apps
+
+Jede App der Familie hat denselben Aufbau: **oben der rote Header** mit der
+Wortmarke, **links die Seitenleiste** als Menü, **rechts der Inhalt** auf
+ruhigem Material. Nur Wortmarke, Icons und Inhalt wechseln — Proportionen und
+Chrome bleiben gleich.
 
 - Hauptfenster mindestens **1080 × 660**, `NavigationSplitView`.
-- Sidebar **200–280** (ideal 220), Systemstil, SF-Symbole; unten der
-  stille Wortmarken-Fuß.
+  System-Eckenradius, großer weicher Umgebungsschatten — ein Fenster, das
+  über der Fläche schwebt.
+- **Titelleiste nativ und minimal**, mit der Seitenleiste zu einer Fläche
+  vereinheitlicht: System-Ampel links, Seitenleisten-Umschalter rechts. Keine
+  eigene Toolbar, keine Markenfarbe — die Chrome bleibt macOS.
+- Sidebar **200–280** (ideal 220), Systemmaterial als **Panel mit leichtem
+  Schlagschatten** zur Inhaltsspalte, SF-Symbole; der aktive Eintrag ist die
+  eine Stelle, an der Rot als Auswahl-Tint sitzt; unten der stille
+  Wortmarken-Fuß, **zentriert mit gleichem Abstand links und rechts**.
 - Bereiche der App als Sidebar-Einträge; zählbares Offenes als Badge am
   Eintrag (z. B. wartende Freigaben).
+- **Der Hero sitzt randlos oben im Inhalt** — bündig an Fensteroberkante,
+  rechter Kante und Seitenleiste, ohne dunklen Rand. Der eine laute
+  Markenmoment pro Fenster (Werte siehe „Der Hero").
 
 ### Inhaltsspalte
 
