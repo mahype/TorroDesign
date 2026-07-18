@@ -6,4 +6,11 @@
   --torro-black:    #0E0E0F; /* Kontur (Bulle), Text           */
   --torro-silver:   #C4C3C3; /* Wortmarken-Zusatz              */
   --torro-white:    #FFFFFF; /* Schrift auf Rot                */
+
+  /* App-Statusfarben (app-design.md) — Web-Werte; native Apple-Apps
+     nehmen die Systemfarben. Markenrot ist nie Statusfarbe. */
+  --torro-status-ok:        #28CD41; /* geprüft, verbunden             */
+  --torro-status-attention: #FF9500; /* wartet, ungeprüft, Abweichung  */
+  --torro-status-error:     #FF3B30; /* kaputt, abgelehnt              */
+  --torro-status-inactive:  #8E8E93; /* nicht eingerichtet/vorhanden   */
 }

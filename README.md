@@ -7,6 +7,9 @@ einem Ort.
 
 > 🐂 **Interaktiver Design-Guide:** [`design-guide.html`](design-guide.html)
 > (im Browser öffnen — enthält alle Vektoren live, Farben, Schriftmuster und Do/Don't).
+>
+> 📱 **Designsprache der Apps:** [`app-design.md`](app-design.md)
+> (Kartensystem, Layoutmaße, Statusfarben, Sprache — destilliert aus TorroMail).
 
 ---
 
@@ -107,6 +110,24 @@ so entstanden `torroforms-wordmark.svg` und `torro-bull.svg`.
 - Wortmarke verzerren, neigen oder die Schnittstärke wechseln.
 - Weiße Wortmarke auf hellen Grund setzen (unlesbar).
 - Schlagschatten/Effekte auf das flache Logo legen.
+
+---
+
+## Die Marke in Apps
+
+Wie aus der Marke eine App wird — Haltung („Entscheidungen statt Optionen"),
+Kartensystem, Layoutmaße, Statusfarben, Bausteine und Sprachregeln — steht in
+[`app-design.md`](app-design.md). Referenz-Implementierung ist **TorroMail**.
+
+| Baustein | Ort |
+|----------|-----|
+| Designsprache (Doku) | [`app-design.md`](app-design.md) |
+| Swift-Bausteine (Wortmarke, Hörner, Signet, Hero, Karte) | [`swift/TorroBrandUI.swift`](swift/TorroBrandUI.swift) |
+| Statusfarben & App-Maße, maschinenlesbar | [`tokens/tokens.json`](tokens/tokens.json) → `app` · [`tokens/colors.css`](tokens/colors.css) |
+
+Die Wortmarke ist im Swift-Baustein parametrisiert
+(`TorroWordmark(product: "WHISPER")`), sodass jede App der Familie ihren
+Lockup nach demselben Muster bekommt.
 
 ---
 
