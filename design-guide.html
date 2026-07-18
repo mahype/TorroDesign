@@ -185,6 +185,76 @@
   #app-icons .asset .stage{min-height:172px}
   .dock-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
   .tm-dock{width:40px;height:40px;filter:drop-shadow(0 2px 5px rgba(120,20,15,.25))}
+
+  /* ---------- APP-DESIGNSPRACHE ---------- */
+  :root{
+    --appd-ok:#28CD41; --appd-warn:#FF9500; --appd-err:#FF3B30; --appd-off:#8E8E93;
+    --appd-warn-fg:#B96400;
+    --appd-edge-top:rgba(255,255,255,.9); --appd-edge-bot:rgba(0,0,0,.10);
+    --appd-edge-top-h:rgba(255,255,255,.9); --appd-edge-bot-h:rgba(0,0,0,.18);
+    --appd-shadow:0 3px 5px rgba(0,0,0,.14),0 1px 1px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --appd-warn-fg:#FFB340;
+      --appd-edge-top:rgba(255,255,255,.20); --appd-edge-bot:rgba(255,255,255,.05);
+      --appd-edge-top-h:rgba(255,255,255,.34); --appd-edge-bot-h:rgba(255,255,255,.10);
+      --appd-shadow:0 3px 5px rgba(0,0,0,.5),0 1px 1px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="light"]{
+    --appd-warn-fg:#B96400;
+    --appd-edge-top:rgba(255,255,255,.9); --appd-edge-bot:rgba(0,0,0,.10);
+    --appd-edge-top-h:rgba(255,255,255,.9); --appd-edge-bot-h:rgba(0,0,0,.18);
+    --appd-shadow:0 3px 5px rgba(0,0,0,.14),0 1px 1px rgba(0,0,0,.05);
+  }
+  :root[data-theme="dark"]{
+    --appd-warn-fg:#FFB340;
+    --appd-edge-top:rgba(255,255,255,.20); --appd-edge-bot:rgba(255,255,255,.05);
+    --appd-edge-top-h:rgba(255,255,255,.34); --appd-edge-bot-h:rgba(255,255,255,.10);
+    --appd-shadow:0 3px 5px rgba(0,0,0,.5),0 1px 1px rgba(0,0,0,.3);
+  }
+  .appd-refs{margin-top:12px;font-size:13px;color:var(--fg-soft)}
+  .appd-refs code{font-size:12px;color:var(--red);background:color-mix(in srgb,var(--red) 8%,transparent);padding:1px 6px;border-radius:5px}
+  .appd-status{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .appd-status .cell{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .appd-status .cell .name{display:flex;align-items:center;gap:8px;font-weight:800;font-size:14px}
+  .appd-status .cell p{margin-top:6px;font-size:12.5px;color:var(--fg-soft)}
+  .appd-dot{width:9px;height:9px;border-radius:50%;flex:none;display:inline-block}
+  .appd-ground{background:var(--bg-panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px}
+  .appd-card{border-radius:12px;border:1px solid transparent;
+    background:linear-gradient(var(--card),var(--card)) padding-box,
+               linear-gradient(180deg,var(--appd-edge-top),var(--appd-edge-bot)) border-box;
+    box-shadow:var(--appd-shadow)}
+  .appd-card.hov{transition:background .12s ease-out}
+  .appd-card.hov:hover{background:linear-gradient(var(--card),var(--card)) padding-box,
+               linear-gradient(180deg,var(--appd-edge-top-h),var(--appd-edge-bot-h)) border-box}
+  .appd-row{display:flex;align-items:center;gap:12px;padding:11px 14px}
+  .appd-badge{width:34px;height:34px;border-radius:8px;flex:none;display:grid;place-items:center;
+    background:linear-gradient(180deg,var(--red),var(--red-deep));box-shadow:0 1px 1.5px rgba(0,0,0,.2);color:#fff}
+  .appd-badge.neutral{background:color-mix(in srgb,var(--fg) 9%,transparent);box-shadow:none;color:var(--fg-soft)}
+  .appd-t{min-width:0}
+  .appd-t .h{font-size:13.5px;font-weight:600;line-height:1.3}
+  .appd-t .s{font-size:12.5px;color:var(--fg-soft);line-height:1.35}
+  .appd-spacer{flex:1}
+  .appd-chev{flex:none;color:var(--fg-soft);opacity:.55}
+  .appd-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .appd-tile{display:flex;gap:7px;align-items:flex-start;padding:10px 12px}
+  .appd-tile .appd-dot{margin-top:5px}
+  .appd-pieces{display:flex;flex-wrap:wrap;gap:26px 34px;align-items:flex-end;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:var(--shadow)}
+  .appd-piece{display:flex;flex-direction:column;gap:9px;align-items:flex-start}
+  .appd-piece .lbl{font-size:11px;color:var(--fg-soft)}
+  .appd-cap{display:inline-block;border-radius:20px;font-size:10.5px;font-weight:700;padding:2px 8px;background:var(--red);color:#fff}
+  .appd-chip{display:inline-block;border-radius:20px;font-size:11px;font-weight:600;padding:2px 8px}
+  .appd-chip.warn{background:color-mix(in srgb,var(--appd-warn) 16%,transparent);color:var(--appd-warn-fg)}
+  .appd-chip.plain{background:color-mix(in srgb,var(--fg) 6%,transparent);color:var(--fg-soft)}
+  .appd-strip{display:flex;gap:2px;padding:2px;background:color-mix(in srgb,var(--fg) 7%,transparent);border-radius:7px}
+  .appd-strip .c{font-size:11.5px;padding:3px 9px;border-radius:5px;color:var(--fg-soft);white-space:nowrap}
+  .appd-strip .c.on{background:var(--card);color:var(--fg);box-shadow:inset 0 0 0 .5px var(--line)}
+  .appd-step{width:18px;height:18px;border-radius:50%;flex:none;background:var(--red);color:#fff;font-size:10.5px;font-weight:700;display:grid;place-items:center}
+  .appd-inline{display:flex;align-items:center;gap:8px;font-size:13px}
+  @media (max-width:820px){ .appd-status{grid-template-columns:1fr 1fr} .appd-pair{grid-template-columns:1fr} }
+  @media (max-width:480px){ .appd-status{grid-template-columns:1fr} }
 </style>
 
 <header class="hero">
@@ -678,6 +748,125 @@
             <tr><td><b>Karten-Oberfläche</b></td><td>neutrales Material, kein Rot</td><td><code>.torroCard()</code></td></tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP-DESIGNSPRACHE -->
+  <section id="designsprache">
+    <div class="wrap">
+      <p class="eyebrow">09 — Designsprache</p>
+      <h2 style="font-size:clamp(28px,4.4vw,44px)">Die App-Designsprache</h2>
+      <p class="lede">Aus TorroMail destilliert, gedacht für jede App der Familie: <b>Entscheidungen statt Optionen.</b> Die Oberfläche zeigt, was zu entscheiden ist und was gerade passiert — in der Sprache des Nutzers. Mechanik und Diagnosen gehören ins Log.</p>
+      <p class="appd-refs">Vollständige Spezifikation: <code>app-design.md</code> · Swift-Bausteine: <code>swift/TorroBrandUI.swift</code> · Statusfarben &amp; Maße: <code>tokens/tokens.json → app</code></p>
+
+      <h3 style="margin:40px 0 6px;font-size:19px;letter-spacing:-.01em">Statusfarben — Systemfarben, feste Bedeutung</h3>
+      <p class="note-serif" style="margin:0 0 18px">Native Apple-Apps nehmen die Systemfarben, die sich hell/dunkel anpassen; die Hex-Werte hier sind die Web-Entsprechung. Markenrot ist nie Statusfarbe.</p>
+      <div class="appd-status">
+        <div class="cell"><div class="name"><span class="appd-dot" style="background:var(--appd-ok)"></span>Grün</div><p>Geprüft, verbunden, in Ordnung — „Bereit für Assistenten“.</p></div>
+        <div class="cell"><div class="name"><span class="appd-dot" style="background:var(--appd-warn)"></span>Orange</div><p>Wartet auf den Nutzer: ungeprüft, Schlüssel fehlt, Ausnahme.</p></div>
+        <div class="cell"><div class="name"><span class="appd-dot" style="background:var(--appd-err)"></span>Rot</div><p>Kaputt oder abgelehnt — Systemrot, nie #D50C0C.</p></div>
+        <div class="cell"><div class="name"><span class="appd-dot" style="background:var(--appd-off)"></span>Grau</div><p>Nicht eingerichtet, nicht installiert, nicht vorhanden.</p></div>
+      </div>
+
+      <h3 style="margin:44px 0 6px;font-size:19px;letter-spacing:-.01em">Die Torro-Karte — belichtete Oberkante, doppelter Schatten</h3>
+      <p class="note-serif" style="margin:0 0 18px">Jedes Panel sitzt auf derselben erhabenen Fläche: Radius 12, eine 1-pt-Kante, die oben hell beginnt und nach unten ausläuft, darunter Umgebungs- und Kontaktschatten. Klickbare Karten heben beim Überfahren die Kante an — hier live. Die eigene Sache trägt die rote Kachel, Fremdes bleibt neutral. Wächst ein Set kompakter Karten, wechselt die Liste auf zwei Spalten.</p>
+      <div class="appd-ground">
+        <div class="appd-card hov">
+          <div class="appd-row">
+            <div class="appd-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3.5 7.5 12 13l8.5-5.5"/></svg></div>
+            <div class="appd-t"><div class="h">Mein Postfach</div><div class="s">name@example.com</div></div>
+            <div class="appd-spacer"></div>
+            <span class="appd-dot" style="background:var(--appd-ok)"></span>
+            <svg class="appd-chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div class="appd-pair">
+          <div class="appd-card hov">
+            <div class="appd-row">
+              <div class="appd-badge neutral"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.1 7.4 7.4 2.1-7.4 2.1L12 21.5l-2.1-7.4-7.4-2.1 7.4-2.1z"/></svg></div>
+              <div class="appd-t"><div class="h">Claude Code</div><div class="s">Verbunden</div></div>
+              <div class="appd-spacer"></div>
+              <span class="appd-dot" style="background:var(--appd-ok)"></span>
+              <svg class="appd-chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+          <div class="appd-card hov">
+            <div class="appd-row">
+              <div class="appd-badge neutral"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.1 7.4 7.4 2.1-7.4 2.1L12 21.5l-2.1-7.4-7.4-2.1 7.4-2.1z"/></svg></div>
+              <div class="appd-t"><div class="h">ChatGPT</div><div class="s">Nicht verbunden</div></div>
+              <div class="appd-spacer"></div>
+              <span class="appd-dot" style="background:var(--appd-warn)"></span>
+              <svg class="appd-chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="appd-pair">
+          <div class="appd-card">
+            <div class="appd-tile">
+              <span class="appd-dot" style="background:var(--appd-ok)"></span>
+              <div class="appd-t"><div class="h">Bereit für Assistenten</div><div class="s">TorroMail läuft im Hintergrund.</div></div>
+            </div>
+          </div>
+          <div class="appd-card">
+            <div class="appd-tile">
+              <span class="appd-dot" style="background:var(--appd-warn)"></span>
+              <div class="appd-t"><div class="h">Kein Assistent verbunden</div><div class="s">Verbinde einen im Bereich MCP-Clients.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="note-serif" style="margin-top:14px">Werte: hell — Kante weiß 90 % → schwarz 10 %, Schatten 14 %/r 5/y 3 + 5 %/r 1/y 1 · dunkel — Kante weiß 20 % → 5 %, Schatten 50 % + 30 % · Hover verstärkt die Kante, easeOut 0,12 s.</p>
+
+      <h3 style="margin:44px 0 6px;font-size:19px;letter-spacing:-.01em">Kleine Bausteine</h3>
+      <div class="appd-pieces">
+        <div class="appd-piece"><span class="appd-cap" style="font-variant-numeric:tabular-nums">3</span><span class="lbl">Zähler — wartende Aktionen</span></div>
+        <div class="appd-piece"><span class="appd-cap">Neu</span><span class="lbl">„Neu“-Marker</span></div>
+        <div class="appd-piece"><span class="appd-chip warn">angepasst</span><span class="lbl">Ausnahme — Klick setzt zurück</span></div>
+        <div class="appd-piece"><span class="appd-chip plain">Standard</span><span class="lbl">Neutraler Chip</span></div>
+        <div class="appd-piece"><div class="appd-strip"><span class="c">Nur lesen</span><span class="c">Lesen + Entwürfe</span><span class="c on">Aufräumen</span><span class="c">Voller Zugriff</span></div><span class="lbl">Preset-Chips — im Custom-Zustand ist nichts gewählt</span></div>
+        <div class="appd-piece"><div class="appd-inline"><span class="appd-step">1</span><b style="font-size:13px">Konto verbinden</b></div><span class="lbl">Schritt-Zeile im Onboarding</span></div>
+        <div class="appd-piece"><div class="appd-inline"><svg width="15" height="15" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="var(--appd-ok)"/><path d="M7.8 12.4l2.7 2.7 5.7-5.9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>TorroMail-Server antwortet — 14 Tools</span></div><span class="lbl">Check-Zeile im Selbsttest</span></div>
+      </div>
+
+      <h3 style="margin:44px 0 6px;font-size:19px;letter-spacing:-.01em">Maße</h3>
+      <div class="table-scroll" style="margin-top:16px">
+        <table>
+          <thead><tr><th>Element</th><th>Maß &amp; Regel</th></tr></thead>
+          <tbody>
+            <tr><td><b>Inhaltsspalte</b></td><td>max. 720 pt, zentriert · Außenabstand 20 · Kartenabstand 10 · Abschnitte 12–16</td></tr>
+            <tr><td><b>Fenster</b></td><td>min. 1080 × 660 · Sidebar 200–280, ideal 220 · Wortmarke als stiller Fuß</td></tr>
+            <tr><td><b>Wizard / Sheet</b></td><td>520 × 420 · Kopf — Inhalt — Fuß · genau ein Primär-Button</td></tr>
+            <tr><td><b>Radien</b></td><td>Karte 12 · Hero 14 · Code-Block 8 · Kachel-Badge 0,24 × Kante — alle kontinuierlich</td></tr>
+            <tr><td><b>Kachel-Badge</b></td><td>34 pt, kompakt 26 · Symbol ≈ 0,4 × Kante · eigen rot, fremd neutral</td></tr>
+            <tr><td><b>Statuspunkt</b></td><td>8–9 pt · immer mit Tooltip und Accessibility-Label</td></tr>
+            <tr><td><b>Typografie</b></td><td>UI = Systemschrift · Frutiger UltraBlack nur für die Wortmarke · Zahlen tabellarisch</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:44px 0 6px;font-size:19px;letter-spacing:-.01em">Sprache</h3>
+      <div class="rules" style="margin-top:16px">
+        <div class="rule do">
+          <h3><span class="tag g">✓</span> So spricht eine Torro-App</h3>
+          <ul>
+            <li>Ganze Sätze aus Nutzersicht: „Bereit für Assistenten“ statt „Server: running“.</li>
+            <li>Ereignisse in Klartext: <code>mail_get_message</code> → „Hat eine Nachricht gelesen“; Ergebnis „Ausgeführt“ oder „Abgelehnt“.</li>
+            <li>Destruktive Dialoge nennen die Konsequenz: „Deine Mail bleibt auf dem Server.“</li>
+            <li>Fremde Warnungen vorwegnehmen — Googles „nicht verifiziert“ wird angekündigt: ein erwarteter Schritt statt eines Fehlers.</li>
+            <li>Leere Zustände sagen, was hier erscheinen wird.</li>
+          </ul>
+        </div>
+        <div class="rule dont">
+          <h3><span class="tag r">✕</span> Nicht</h3>
+          <ul>
+            <li>Prozesszustände, Fehlercodes, Tool-Namen auf der Fläche — Mechanik gehört ins Log.</li>
+            <li>Fehler als modale Alerts — sie sind Diagnosen: Fußnote am Ort des Geschehens, Details im Log.</li>
+            <li>Optionen zeigen, wo eine Entscheidung reicht — Presets zuerst, Details dahinter.</li>
+            <li>Geheimnisse im Klartext — Schlüssel maskiert; „Zeigen“ ist ein bewusster Klick, kopiert wird der echte Wert.</li>
+            <li>Ein zweiter lauter Markenmoment im selben Fenster.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
