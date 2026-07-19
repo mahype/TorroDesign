@@ -68,6 +68,7 @@ Sekundär für Print-Fließtext: **Minion Pro Regular**
 logo/
 ├── wordmark/       Wortmarken (Hörner + Schriftzug) — TORROFORMS, TORROMAIL
 ├── icon-square/    App-Icon: rotes Quadrat mit Hörnern
+│   └── products/   App-Icons je Produkt (Hörner + Funktions-Glyph)
 ├── horns/          Hörner-Signet allein (weiß / rot / schwarz)
 └── bull/           Kampfbulle (Key-Visual)
 ```
@@ -80,7 +81,8 @@ logo/
 | Wortmarke (editierbar) | `logo/wordmark/torro-forms-logo.ai` | Text noch als Frutiger-Font |
 | Wortmarke (Web) | `logo/wordmark/torroforms-wordmark.svg` | weiß/silber, für dunklen/roten Grund |
 | Wortmarke TorroMail | `logo/wordmark/torromail-wordmark.svg` | Produktvariante, weiß/silber, Outlines |
-| App-Icon | `logo/icon-square/torro-logo-square.svg` | Favicon, App-Icon, Avatar |
+| App-Icon (Dachmarke) | `logo/icon-square/torro-logo-square.svg` | Favicon, Avatar, Suite — nicht für einzelne Apps |
+| App-Icon je Produkt | `logo/icon-square/products/torro{mail,whisper,talk,forms}-icon.svg` | Hörner-Signet + Funktions-Glyph |
 | Hörner-Signet | `logo/horns/horns-{white,red,black}.svg` | kleine Akzente, Loader, Wasserzeichen |
 | Kampfbulle | `logo/bull/torro-bull-transparent.ai` · `torro-bull.svg` | Hero/Key-Visual, großformatig |
 

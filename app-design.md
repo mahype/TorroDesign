@@ -308,7 +308,10 @@ sobald ein Assistent etwas tut.").
    Hero, Torro-Karte, Button-Stil, Kachel-Badge. Frutiger-UltraBlack-TTF
    (`fonts/frutiger/LTe50335.ttf`) als `FrutigerLT-UltraBlack.ttf` in die
    App-Ressourcen legen und beim Start registrieren.
-3. **App-Icon** nach dem Familien-System (siehe Design-Guide:
-   Funktions-Glyphe + Hörner-Wasserzeichen auf rotem Verlauf).
+3. **App-Icon** nach dem Familien-System (siehe Design-Guide, Sektion 08):
+   Hörner-Signet oben, Funktions-Glyph darunter — beide weiß auf rotem
+   Verlauf. Fertige Vorlagen: `logo/icon-square/products/`. Für kleine
+   Größen (Menüleiste, Favicon) die kompakte Fassung ohne Hörner,
+   nur der Glyph (Sektion 07).
 4. Haltung prüfen: Was auf der Fläche steht, ist eine Entscheidung oder
    eine Antwort — alles andere ins Log.
