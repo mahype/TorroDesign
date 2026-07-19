@@ -708,6 +708,18 @@
           <div class="meta"><h3>2 · Funktion</h3><code>ein weißer Glyph, ~72 % der Fläche</code></div></div>
       </div>
 
+      <h3 style="margin:44px 0 6px;font-size:19px;letter-spacing:-.01em">Die Leinwand — einmal je Plattform</h3>
+      <p class="note-serif" style="margin:0 0 18px">Das Bild ist überall dasselbe; nur der Rand ringsum unterscheidet sich. <b>Apple rundet und beschneidet selbst</b> — deshalb liegt der rote Träger entweder gerundet auf transparentem Rand (macOS) oder randlos und ungerundet auf der ganzen Fläche (iOS). Eine dritte Variante gibt es nicht. Das Karo zeigt, was transparent bleibt.</p>
+      <div class="grid cols-3" style="margin-top:0">
+        <div class="asset"><div class="stage stage-check"><svg viewBox="0 0 120 120" class="tm-ico"><defs><linearGradient id="g-canvas-mac" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D50C0C"/><stop offset="1" stop-color="#A50A0A"/></linearGradient></defs><rect x="11.7" y="11.7" width="96.6" height="96.6" rx="21.7" fill="url(#g-canvas-mac)"/><g transform="translate(26,26) scale(0.69)"><g fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"><rect x="14" y="26" width="72" height="50" rx="9"/><path d="M19 33 L50 56 L81 33"/></g></g></svg></div>
+          <div class="meta"><h3>macOS · <span style="color:var(--ok,#28CD41)">✓</span></h3><code>1024 px · Träger 824 px, r 185,4 · Rand transparent</code></div></div>
+        <div class="asset"><div class="stage stage-check"><svg viewBox="0 0 120 120" class="tm-ico"><defs><linearGradient id="g-canvas-ios" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D50C0C"/><stop offset="1" stop-color="#A50A0A"/></linearGradient></defs><rect width="120" height="120" fill="url(#g-canvas-ios)"/><g transform="translate(17,17) scale(0.86)"><g fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"><rect x="14" y="26" width="72" height="50" rx="9"/><path d="M19 33 L50 56 L81 33"/></g></g></svg></div>
+          <div class="meta"><h3>iOS/iPadOS · <span style="color:var(--ok,#28CD41)">✓</span></h3><code>1024 px randlos · keine Rundung, keine Transparenz</code></div></div>
+        <div class="asset"><div class="stage stage-check"><svg viewBox="0 0 120 120" class="tm-ico"><defs><linearGradient id="g-canvas-bad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D50C0C"/><stop offset="1" stop-color="#A50A0A"/></linearGradient></defs><rect width="120" height="120" rx="27" fill="#fff"/><rect x="11.7" y="11.7" width="96.6" height="96.6" rx="21.7" fill="url(#g-canvas-bad)"/><g transform="translate(26,26) scale(0.69)"><g fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"><rect x="14" y="26" width="72" height="50" rx="9"/><path d="M19 33 L50 56 L81 33"/></g></g></svg></div>
+          <div class="meta"><h3>Falsch · <span style="color:var(--err,#FF3B30)">✕</span></h3><code>weiße Platte statt Transparenz → Rahmen im Dock</code></div></div>
+      </div>
+      <p class="note-serif" style="margin:18px 0 0">Beide richtigen Fassungen entstehen aus demselben Master — nicht von Hand: <code>logo/icon-square/products/build-appicons.sh &lt;app&gt;</code> baut <code>.icns</code> und <code>AppIcon.appiconset</code>.</p>
+
       <div class="rules" style="margin-top:34px">
         <div class="rule do">
           <h3><span class="tag g">✓</span> So</h3>
@@ -715,6 +727,7 @@
             <li>Ein einziger Funktions-Glyph pro App, weiß, geometrisch, mit runden Enden — der Held des Icons.</li>
             <li>Glyph zentriert, ~72 % der Fläche, gleiche Strichstärke über alle Apps.</li>
             <li>Gleicher roter Verlaufs-Träger und gleiches Eckenradius für jede App.</li>
+            <li><b>Der rote Träger ist die äußerste sichtbare Fläche.</b> Was ihn umgibt, ist transparent — nie eine Farbe.</li>
             <li>Das reine Hörner-Quadrat bleibt der Dachmarke „Torro“ vorbehalten (Suite, Web, Avatar) — nicht einer einzelnen App.</li>
           </ul>
         </div>
@@ -725,6 +738,8 @@
             <li>Zwei Glyphe oder Glyph + Textlabel ins Icon packen.</li>
             <li>Den Funktions-Glyph in eine Farbe außer Weiß setzen.</li>
             <li>Träger-Farbe oder Eckenradius je App variieren.</li>
+            <li><b>Eine weiße Platte unter den Träger legen</b> — daraus wird im Dock ein weißer Rahmen, und die App fällt aus der Familie.</li>
+            <li>Den Träger zweimal runden: einmal im Bild und einmal durch die Systemmaske.</li>
           </ul>
         </div>
       </div>
@@ -737,7 +752,7 @@
     <div class="wrap">
       <p class="eyebrow">08 — Die Produktfamilie</p>
       <h2 style="font-size:clamp(28px,4.4vw,44px)">Vier Apps, eine Marke</h2>
-      <p class="lede">Die ersten vier Anwendungen der Familie. Jedes App-Icon trägt das <b>Hörner-Signet und darunter seinen Funktions-Glyph</b> auf dem roten Träger; die Wortmarke setzt darüber das feste System — <b>Hörner beidseitig, „TORRO“ voll, der Produktname in Silber.</b></p>
+      <p class="lede">Die ersten vier Anwendungen der Familie. Jedes App-Icon trägt das <b>Hörner-Signet und darunter seinen Funktions-Glyph</b> auf dem roten Träger; die Wortmarke setzt darüber das feste System — <b>Hörner beidseitig, „TORRO“ voll, der Produktname in Silber.</b> Alle vier Icons kommen aus demselben Master und derselben Leinwandregel (<a href="#app-icons">Punkt 07</a>) — nur so bleiben sie im Dock nebeneinander erkennbar als eine Familie.</p>
 
       <div class="pf-grid">
         <div class="pf-card">

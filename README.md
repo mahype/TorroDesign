@@ -69,6 +69,8 @@ logo/
 ├── wordmark/       Wortmarken (Hörner + Schriftzug) — TORROFORMS, TORROMAIL
 ├── icon-square/    App-Icon: rotes Quadrat mit Hörnern
 │   └── products/   App-Icons je Produkt (Hörner + Funktions-Glyph)
+│       ├── macos/          macOS-Master (Squircle, transparenter Rand)
+│       └── build-appicons.sh  baut .icns + AppIcon.appiconset
 ├── horns/          Hörner-Signet allein (weiß / rot / schwarz)
 └── bull/           Kampfbulle (Key-Visual)
 ```
@@ -82,7 +84,9 @@ logo/
 | Wortmarke (Web) | `logo/wordmark/torroforms-wordmark.svg` | weiß/silber, für dunklen/roten Grund |
 | Wortmarke TorroMail | `logo/wordmark/torromail-wordmark.svg` | Produktvariante, weiß/silber, Outlines |
 | App-Icon (Dachmarke) | `logo/icon-square/torro-logo-square.svg` | Favicon, Avatar, Suite — nicht für einzelne Apps |
-| App-Icon je Produkt | `logo/icon-square/products/torro{mail,whisper,talk,forms}-icon.svg` | Hörner-Signet + Funktions-Glyph |
+| App-Icon je Produkt | `logo/icon-square/products/torro{mail,whisper,talk,forms}-icon.svg` | Hörner-Signet + Funktions-Glyph · randloser Master (iOS) |
+| App-Icon macOS | `logo/icon-square/products/macos/<app>-icon-macos.svg` | 824er Squircle auf transparenter 1024er Leinwand |
+| App-Icon bauen | `logo/icon-square/products/build-appicons.sh <app>` | erzeugt `.icns` + `AppIcon.appiconset` aus dem Master |
 | Hörner-Signet | `logo/horns/horns-{white,red,black}.svg` | kleine Akzente, Loader, Wasserzeichen |
 | Kampfbulle | `logo/bull/torro-bull-transparent.ai` · `torro-bull.svg` | Hero/Key-Visual, großformatig |
 

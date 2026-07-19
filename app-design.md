@@ -161,10 +161,20 @@ Chrome bleiben gleich.
 - **Titelleiste nativ und minimal**, mit der Seitenleiste zu einer Fläche
   vereinheitlicht: System-Ampel links, Seitenleisten-Umschalter rechts. Keine
   eigene Toolbar, keine Markenfarbe — die Chrome bleibt macOS.
-- Sidebar **200–280** (ideal 220), Systemmaterial als **Panel mit leichtem
-  Schlagschatten** zur Inhaltsspalte, SF-Symbole; der aktive Eintrag ist die
+- Sidebar **200–280** (ideal 220), SF-Symbole; der aktive Eintrag ist die
   eine Stelle, an der Rot als Auswahl-Tint sitzt; unten der stille
   Wortmarken-Fuß, **zentriert mit gleichem Abstand links und rechts**.
+- **Die Seitenleiste ist eine deckende Fläche, kein durchscheinendes
+  Material** — Systemfenster-Grau (`windowBackgroundColor`, folgt hell/dunkel),
+  darüber der leichte Schlagschatten zur Inhaltsspalte
+  (`schwarz 12 % / r 6 / x 2`). Grund ist Verlässlichkeit: das
+  Seitenleisten-Material blendet gegen den Fensterhintergrund und fällt genau
+  auf dieses Grau zurück, sobald der Compositor nicht sampeln kann — erste
+  Frames nach dem Öffnen, Fenster nicht im Fokus, Mission Control,
+  Bildschirmaufnahme. Die Fläche wechselte also ohnehin zwischen zwei
+  Zuständen; wir nehmen den stabilen. Das bleibt „Nativ zuerst": es ist die
+  Systemfarbe, nur nicht mehr durchscheinend. Baustein:
+  [`torroSidebar()`](swift/TorroBrandUI.swift).
 - Bereiche der App als Sidebar-Einträge; zählbares Offenes als Badge am
   Eintrag (z. B. wartende Freigaben).
 - **Der Hero sitzt randlos oben im Inhalt** — bündig an Fensteroberkante,
@@ -346,8 +356,25 @@ sobald ein Assistent etwas tut.").
    es vorfindet. Nicht „aufräumen".
 3. **App-Icon** nach dem Familien-System (siehe Design-Guide, Sektion 08):
    Hörner-Signet oben, Funktions-Glyph darunter — beide weiß auf rotem
-   Verlauf. Fertige Vorlagen: `logo/icon-square/products/`. Für kleine
-   Größen (Menüleiste, Favicon) die kompakte Fassung ohne Hörner,
-   nur der Glyph (Sektion 07).
+   Verlauf. Nicht von Hand bauen, sondern aus dem Master erzeugen:
+
+   ```
+   logo/icon-square/products/build-appicons.sh torrowhisper
+   ```
+
+   liefert `torrowhisper.icns` (macOS) und `AppIcon.appiconset`
+   (iOS/iPadOS) aus denselben Vektoren. Master:
+   `logo/icon-square/products/<app>-icon.svg` (randlos) und
+   `.../macos/<app>-icon-macos.svg` (824er Squircle auf transparenter
+   1024er Leinwand).
+
+   **Der rote Träger ist die äußerste sichtbare Fläche.** Ringsum bleibt
+   die Leinwand transparent — nie weiß. Eine weiße Platte darunter wird
+   im Dock zum weißen Rahmen, und die App fällt sichtbar aus der Familie.
+   Apple rundet selbst: macOS-Icon einmal gerundet mit transparentem
+   Rand, iOS-Icon randlos und ungerundet.
+
+   Für kleine Größen (Menüleiste, Favicon) die kompakte Fassung ohne
+   Hörner, nur der Glyph (Sektion 07).
 4. Haltung prüfen: Was auf der Fläche steht, ist eine Entscheidung oder
    eine Antwort — alles andere ins Log.
