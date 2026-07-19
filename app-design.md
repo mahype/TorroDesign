@@ -36,9 +36,11 @@ maschinenlesbar im `app`-Block von [`tokens/tokens.json`](tokens/tokens.json).
 - **Torro-Rot `#D50C0C`** ist der App-weite Akzent (Tint): Auswahl,
   Zähler-Badges, vereinzelte Text-Akzente (z. B. „Log öffnen").
 - **Buttons bleiben Standard-macOS.** Der rote Tint färbt bei Systemknöpfen
-  die Beschriftung statt der Fläche — unlesbar. Buttons nehmen deshalb den
-  Standard-Look ohne Tint (`.bordered`, Tint aus). `borderedProminent` gibt es
-  genau einmal: als Primär-Button im Wizard-Footer.
+  die Beschriftung statt der Fläche — roter Text auf dunklem Grund ist unlesbar
+  und **nie** erlaubt. Ein Button sieht immer aus wie der neutrale System-Knopf:
+  graue Fläche, helle Beschriftung (`.bordered`, Tint aus). Kein Button trägt
+  seine Bedeutung über die Textfarbe — schon gar nicht über Markenrot.
+  `borderedProminent` gibt es genau einmal: als Primär-Button im Wizard-Footer.
 - **Rot als Fläche** nur im Hero und auf den Kachel-Badges der „eigenen Sache"
   (siehe Bausteine).
 - Destruktives läuft über die System-Rolle (`role: .destructive`), nicht über

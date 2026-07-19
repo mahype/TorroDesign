@@ -289,9 +289,10 @@ public extension View {
         modifier(TorroCard(cornerRadius: cornerRadius, isHighlighted: isHighlighted))
     }
 
-    /// Der Standard-macOS-Druckknopf. Das Markenrot ist Grund- und
-    /// Akzentfarbe — auf einem Control färbt es die Beschriftung statt der
-    /// Fläche, unlesbar, also verzichten Buttons auf den App-Tint.
+    /// Der Standard-macOS-Druckknopf: graue Fläche, helle Beschriftung. Das
+    /// Markenrot ist Grund- und Akzentfarbe — auf einem Control färbt es die
+    /// Beschriftung statt der Fläche. Roter Text auf dunklem Grund ist unlesbar
+    /// und nie erlaubt; Buttons verzichten deshalb ausnahmslos auf den App-Tint.
     func torroButton() -> some View {
         buttonStyle(.bordered).tint(nil)
     }
