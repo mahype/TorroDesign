@@ -203,6 +203,23 @@ rechts `Abbrechen` und **ein** Primär-Button (`borderedProminent`).
   wenn sie leer ausging. Escape-Hatch, nicht Normalweg.
 - Abbruch räumt restlos auf; nichts Halbkonfiguriertes erreicht die App.
 
+**Das gilt für Sheets, die etwas *committen*.** Eine Fläche, die direkt ins
+Model schreibt — Einstellungs- und Verwaltungs-Sheets, bei denen jede Änderung
+sofort greift —, ist kein Wizard:
+
+- Sie trägt **nur „Fertig"**, kein „Abbrechen". Ein Abbrechen, das nichts
+  zurücknimmt, täuscht Zurücknehmbarkeit vor; das ist schlimmer als der fehlende
+  Knopf.
+- Der **feste Rahmen 520 × 420 gilt für sie nicht.** Listen von Konten, Modellen
+  oder Schlüsseln brauchen Platz; sie werden nach Inhalt bemessen. Der feste
+  Rahmen ist die Wizard-Disziplin, keine Sheet-Disziplin.
+- Kopf, `Divider` und Fehler-Slot im Fuß bleiben identisch — die Chrome ist
+  dieselbe, nur die Fuß-Knöpfe und das Maß unterscheiden sich.
+
+Wer Zurücknehmbarkeit *will*, macht die Fläche zum Wizard: auf einem Entwurf
+arbeiten und erst beim Primär-Button schreiben. Dann gilt die Spec oben wieder
+vollständig.
+
 ---
 
 ## Bausteine
@@ -252,6 +269,13 @@ Orten — die Wahl aus dem Setup findet der Nutzer später identisch wieder.
 Nummernkreis **18 pt** in Markenrot (weiße `caption` bold, monospaced) +
 Titel (`headline`) + Erklärsatz (`subheadline`, sekundär). Danach genau
 **ein** Button für den nächsten Schritt.
+
+Das beschreibt die **eine Schritt-Zeile im Inhalt** — den Schritt, auf dem der
+Nutzer gerade steht. Steht dieselbe Zeile als **Navigations-Rail** (alle Schritte
+untereinander, erledigte mit Haken), bleiben Kreis und Ziffern wie oben, aber der
+Titel geht auf `subheadline` zurück und der Erklärsatz entfällt: fünf `headline`-
+Zeilen nebeneinander wären lauter als der Inhalt, den sie begleiten. Der aktive
+Eintrag trägt das Gewicht (`semibold`), nicht die ganze Liste.
 
 ### Check-Zeilen (Selbsttest)
 
@@ -308,6 +332,18 @@ sobald ein Assistent etwas tut.").
    Hero, Torro-Karte, Button-Stil, Kachel-Badge. Frutiger-UltraBlack-TTF
    (`fonts/frutiger/LTe50335.ttf`) als `FrutigerLT-UltraBlack.ttf` in die
    App-Ressourcen legen und beim Start registrieren.
+
+   ⚠️ **Das Drop-in hinkt dieser Prosa hinterher**: es enthält noch den Hero
+   als schwebende Karte (Radius 14, weiße Randlinie), während oben unter
+   „Der Hero" der **randlose** Hero steht. Bei Konflikt gilt dieser Text, nicht
+   die Datei — und wer die Datei einkopiert, prüft den Hero danach gegen
+   „Der Hero". Gleiches gilt für Apps ohne Frutiger-Lizenzweitergabe (Open
+   Source): dort UI-Systemschrift, die Wortmarke im schwersten Systemschnitt.
+
+   Dass einzelne Bausteine des Drop-ins in einer App **keinen Aufrufer** haben
+   (Hover für klickbare Karten, Zähler-Chips), ist in Ordnung und kein toter
+   Code: die Shell bildet das Vokabular vollständig ab, damit die nächste Fläche
+   es vorfindet. Nicht „aufräumen".
 3. **App-Icon** nach dem Familien-System (siehe Design-Guide, Sektion 08):
    Hörner-Signet oben, Funktions-Glyph darunter — beide weiß auf rotem
    Verlauf. Fertige Vorlagen: `logo/icon-square/products/`. Für kleine
